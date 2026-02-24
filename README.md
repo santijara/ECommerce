@@ -130,10 +130,15 @@ Se implementan pruebas unitarias en:
 
 
 # Como Ejecutar el Proyecto
-- git clone https://github.com/tuusuario/ecommerce-api.git
-- cd ecommerce-api
+bash
+- git clone https://github.com/santijara/ECommerce.git
+- cd ECommerce
 - dotnet restore
-- dotnet run --project src/WebApi
+- dotnet run --project ECommerce/ECommerce.csproj
+
+# Ejecutar pruebas
+bash
+dotnet test
 
 # Autor
 Santiago Jaramillo Torres
