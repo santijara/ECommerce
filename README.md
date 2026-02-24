@@ -43,11 +43,11 @@ API REST desarrollada con .NET 8 para la gestión y venta de productos en línea
 
 El proyecto sigue la estructura de Clean Architecture, separando responsabilidades en capas independientes:
 
-src/
+ECommerce/
  ├── Domain
  ├── Application
  ├── Infrastructure
- └── WebApi
+ 
 
 ## Domain
 - Entidades
