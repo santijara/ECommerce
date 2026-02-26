@@ -10,6 +10,7 @@ namespace ECommerce.Application.Interfaces
     /// </summary>
     public interface IInvoiceSender
     {
-        Task<Result<string>> SendAsync(Invoice invoice,string email,CancellationToken cancellationToken);
+        string SavePdf(Invoice invoice);
+        Task<Result<string>> SendAsync(Invoice invoice,string email, string pdfPath,CancellationToken cancellationToken);
     }
 }

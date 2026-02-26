@@ -46,6 +46,7 @@
                 invoiceNumber);
         }
 
+
         /// Marca la factura como enviada exitosamente.
         public void MarkAsSent(string message)
         {

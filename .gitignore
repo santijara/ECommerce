@@ -485,3 +485,6 @@ $RECYCLE.BIN/
 
 # Sensitive configuration files
 appsettings.Development.json
+
+# Generated invoices
+Invoices/

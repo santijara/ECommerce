@@ -52,8 +52,11 @@ namespace ECommerce.Application.Feature.Checkout.Events
             await _invoiceRepository.AddAsync(invoice, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
+            //Generar Pdf
+            var pdfPath = _invoiceSender.SavePdf(invoice);
+
             //Enviarla al correo electronico registrado del usuario
-            var result = await _invoiceSender.SendAsync(invoice,user.Email.Value, cancellationToken);
+            var result = await _invoiceSender.SendAsync(invoice,user.Email.Value, pdfPath, cancellationToken);
 
             if (result.IsSuccess)
             {
