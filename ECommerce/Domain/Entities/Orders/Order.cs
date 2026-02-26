@@ -77,14 +77,14 @@ namespace ECommerce.Domain.Entities.Orders
             return Result.Success();
         }
 
-        // Subtotal de la orden (sin impuestos)
-        public decimal SubTotal  => _items.Sum(x => x.UnitPrice.Amount * x.Quantity);
+        // Total pagado (precio mostrado al usuario)
+        public decimal Total => _items.Sum(x => x.UnitPrice.Amount * x.Quantity);
 
-        // Impuesto aplicado (19%)
-        public decimal Tax => SubTotal * 0.19m;
+        // Subtotal sin IVA
+        public decimal SubTotal => Total / 1.19m;
 
-        //Total de la orden (subtotal + impuestos)
-        public decimal Total => SubTotal + Tax;
+        // IVA contenido dentro del total
+        public decimal Tax => Total - SubTotal;
     }
 
 }
